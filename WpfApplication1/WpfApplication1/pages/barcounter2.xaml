@@ -1,0 +1,53 @@
+﻿<Page x:Class="WpfApplication1.pages.barcounter2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+	Title="barcounter2">
+
+    <Viewbox Stretch="Fill">
+        <Grid Width="1366" Height="768">
+            <Grid.Background>
+                <ImageBrush ImageSource="/images/barcounter.jpg"/>
+            </Grid.Background>
+
+            <!-- Options -->
+            <GroupBox x:Name="groupboxbar2" Header="GroupBox" HorizontalAlignment="Left" Margin="477,23,0,0" VerticalAlignment="Top" Width="811" Height="372" Visibility="Visible" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+                <Grid>
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="789" Height="340" Source="/images/dialogcloud.png" Stretch="Fill"/>
+                    <Label Content="Καλώς τον γυμναστή μας!&#x0a;Τι θα πάρεις σήμερα;" HorizontalAlignment="Left" Margin="200,54,0,0" VerticalAlignment="Top" Width="327" Height="88" FontSize="26" RenderTransformOrigin="0.794,1.001"/>
+                    <Button x:Name="viewmenubtn" Content="Για να δω!" HorizontalAlignment="Left" Margin="220,163,0,0" VerticalAlignment="Top" Width="116" Click="viewmenubtn_Click"/>
+                    <Button x:Name="backbtn" Content="Τίποτα, ευχαριστώ!" HorizontalAlignment="Left" Margin="382,163,0,0" VerticalAlignment="Top" Width="116" Click="backbtn_Click"/>
+                </Grid>
+            </GroupBox>
+            <!-- Menu -->
+            <GroupBox x:Name="groupboxmenu2" Header="GroupBox" HorizontalAlignment="Left" Margin="477,23,0,0" VerticalAlignment="Top" Width="811" Height="495" Visibility="Hidden" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+                <Grid>
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="789" Height="430" Source="/images/dialogcloud.png" Stretch="Fill"/>
+                    <Label Content="ΚΑΤΑΛΟΓΟΣ" HorizontalAlignment="Left" Margin="277,19,0,0" VerticalAlignment="Top" Width="169" Height="36" FontSize="22" FontWeight="Bold" FontStyle="Italic" FontFamily="DejaVu Sans"/>
+                    <CheckBox x:Name="menu2check1" Content="Νερό 500ml  --  €0.5" HorizontalAlignment="Left" Margin="61,53,0,0" VerticalAlignment="Top" FontSize="16" Checked="menu2check1_Checked" Unchecked="menu2check1_Unchecked"/>
+                    <CheckBox x:Name="menu2check2" Content="Ισοτονικό Ποτό 500ml  --  €2.5" HorizontalAlignment="Left" Margin="61,78,0,0" VerticalAlignment="Top" FontSize="16" Checked="menu2check2_Checked" Unchecked="menu2check2_Unchecked"/>
+                    <CheckBox x:Name="menu2check3" Content="Φρέκος Χυμός Πορτοκάλι  --  €1.5" HorizontalAlignment="Left" Margin="61,103,0,0" VerticalAlignment="Top" FontSize="16" Checked="menu2check3_Checked" Unchecked="menu2check3_Unchecked"/>
+                    <CheckBox x:Name="menu2check4" Content="Παγωμένο Τσάι Λεμόνι  --  €1.9" HorizontalAlignment="Left" Margin="61,128,0,0" VerticalAlignment="Top" FontSize="16" Checked="menu2check4_Checked" Unchecked="menu2check4_Unchecked"/>
+                    <CheckBox x:Name="menu2check5" Content="Τόνικ  --  €2.2" HorizontalAlignment="Left" Margin="61,153,0,0" VerticalAlignment="Top" FontSize="16" Checked="menu2check5_Checked" Unchecked="menu2check5_Unchecked"/>
+                    <CheckBox x:Name="menu2check6" Content="Μπάρα Δημητριακών  --  €1" HorizontalAlignment="Left" Margin="342,53,0,0" VerticalAlignment="Top" FontSize="16" Checked="menu2check6_Checked" Unchecked="menu2check6_Unchecked"/>
+                    <CheckBox x:Name="menu2check7" Content="Τοστ Τυρί γαλοπούλα  --  €1.5" HorizontalAlignment="Left" Margin="342,78,0,0" VerticalAlignment="Top" FontSize="16" Checked="menu2check7_Checked" Unchecked="menu2check7_Unchecked"/>
+                    <CheckBox x:Name="menu2check8" Content="Τοστ Τυρί Ζαμπόν  --  €1.2" HorizontalAlignment="Left" Margin="342,103,0,0" VerticalAlignment="Top" FontSize="16" Checked="menu2check8_Checked" Unchecked="menu2check8_Unchecked"/>
+                    <CheckBox x:Name="menu2check9" Content="Μπαγκέτα με Γαλοπούλα  --  €3.6" HorizontalAlignment="Left" Margin="342,128,0,0" VerticalAlignment="Top" FontSize="16" Checked="menu2check9_Checked" Unchecked="menu2check9_Unchecked"/>
+                    <CheckBox x:Name="menu2check10" Content="Μπαγκέτα  με Τόνο  --  €3.8" HorizontalAlignment="Left" Margin="342,153,0,0" VerticalAlignment="Top" FontSize="16" Checked="menu2check10_Checked" Unchecked="menu2check10_Unchecked"/>
+                    <Button x:Name="payment2btn" Content="Πληρωμή" HorizontalAlignment="Left" Margin="345,228,0,0" VerticalAlignment="Top" Width="75" Click="payment2btn_Click"/>
+                    <Button x:Name="cancelmenu2btn" Content="Ακύρωση" HorizontalAlignment="Left" Margin="442,228,0,0" VerticalAlignment="Top" Width="75" Click="cancelmenu2btn_Click"/>
+                    <Button x:Name="closemenu2btn" Content="Επιστροφή" HorizontalAlignment="Left" Margin="541,228,0,0" VerticalAlignment="Top" Width="75" Click="closemenu2btn_Click"/>
+                    <Label Content="Σύνολο: €" HorizontalAlignment="Left" Margin="178,188,0,0" VerticalAlignment="Top" Height="28" Width="69" FontWeight="Bold" RenderTransformOrigin="0.069,0.533"/>
+                    <Label x:Name="totallbl2" Content="0" HorizontalAlignment="Left" Margin="252,188,0,0" VerticalAlignment="Top" Height="28" Width="49" FontWeight="Bold" RenderTransformOrigin="0.377,-0.436"/>
+                    <Label Content="Έκπτωση Υπαλλήλου (30%): €" HorizontalAlignment="Left" Margin="61,206,0,0" VerticalAlignment="Top" Height="28" Width="186" FontWeight="Bold" RenderTransformOrigin="0.488,0.167"/>
+                    <Label x:Name="discountlbl2" Content="0" HorizontalAlignment="Left" Margin="252,206,0,0" VerticalAlignment="Top" Height="28" Width="49" FontWeight="Bold" RenderTransformOrigin="0.377,-0.436"/>
+                    <Label Content="Τελικό Σύνολο: €" HorizontalAlignment="Left" Margin="139,225,0,0" VerticalAlignment="Top" Height="28" Width="108" FontWeight="Bold" RenderTransformOrigin="0.069,0.533"/>
+                    <Label x:Name="finallbl2" Content="0" HorizontalAlignment="Left" Margin="252,225,0,0" VerticalAlignment="Top" Height="28" Width="49" FontWeight="Bold" RenderTransformOrigin="0.377,-0.436"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Viewbox>
+</Page>

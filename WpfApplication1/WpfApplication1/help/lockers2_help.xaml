@@ -1,0 +1,78 @@
+﻿<Page x:Class="WpfApplication1.help.lockers2_help"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="lockers2_help">
+
+    <Viewbox Stretch="Fill">
+        <Grid Width="1366" Height="768">
+            <Grid.Background>
+                <ImageBrush ImageSource="/images/locker.jpg"/>
+            </Grid.Background>
+
+            <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+            <Grid.Resources>
+                <Style x:Key="MyButtonStyle" TargetType="Button">
+                    <Setter Property="OverridesDefaultStyle" Value="True"/>
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Name="border" 
+                            BorderThickness="1"
+                            Padding="4,2" 
+                            BorderBrush="Red" 
+                            CornerRadius="3" 
+                            Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+            <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+
+            <!-- Help Mode-->
+            <Label Content="Λειτουργία Βοήθειας" HorizontalAlignment="Left" Margin="1129,34,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="Red" FontStyle="Italic"/>
+            <Button x:Name="exithelpbtn" Content="Έξοδος από Λειτουργία Βοήθειας" HorizontalAlignment="Left" Margin="1129,71,0,0" VerticalAlignment="Top" Width="211" Height="26" Cursor="Hand" FontStyle="Italic" Foreground="White" Click="exithelpbtn_Click">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            
+            <!-- Heater -->
+            <Image HorizontalAlignment="Left" Height="141" Margin="330,0,0,0" VerticalAlignment="Top" Width="239" Source="/images/heater.png" Stretch="Fill"/>
+            <Label x:Name="heaterstatus" Content="OFF" HorizontalAlignment="Left" Margin="435,56,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Foreground="Red" Width="37" Background="#FF4197FF" Height="26"/>
+            <Button x:Name="heaterbtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="322,33,0,0" VerticalAlignment="Top" Width="257" Height="75" ToolTip="Θερμοσίφωνας" Cursor="Help" Click="heater_hbtn_Click">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <!-- Fan -->
+            <Image HorizontalAlignment="Left" Height="89" Margin="10,19,0,0" VerticalAlignment="Top" Width="136" Source="/images/fan.jpg" Stretch="Fill" RenderTransformOrigin="1.454,1.743"/>
+            <Button x:Name="fanbtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="165" Height="107" ToolTip="Εξαερισμός" Cursor="Help" Click="fan_hbtn_Click" Panel.ZIndex="2">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <!-- Customer7 -->
+            <Image HorizontalAlignment="Left" Height="438" Margin="630,144,0,0" VerticalAlignment="Top" Width="199" Source="/images/customer7.png"/>
+            <!-- Customer8 -->
+            <Image HorizontalAlignment="Left" Height="482" Margin="0,286,0,0" VerticalAlignment="Top" Width="579" Source="/images/customer8.png"/>
+            <!-- Navigation -->
+            <Button x:Name="toExercise2_hbtn" Content="Προς Χώρο Εκγύμνασης" HorizontalAlignment="Left" Margin="35,653,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Help" Click="toExercise2_hbtn_Click" BorderBrush="Red"/>
+            <Button x:Name="toPool2_hbtn" Content="Προς Πισίνα" HorizontalAlignment="Left" Margin="35,678,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Help" Click="toPool2_hbtn_Click" BorderBrush="Red"/>
+            <Button x:Name="toBar2_hbtn" Content="Προς Μπαρ" HorizontalAlignment="Left" Margin="35,703,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Help" Click="toBar2_hbtn_Click" BorderBrush="Red"/>
+
+        </Grid>
+    </Viewbox>
+</Page>

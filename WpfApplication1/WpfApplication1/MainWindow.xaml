@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="E-Gym" WindowState="Maximized">
+
+    <Grid>
+        <Frame x:Name="myframe" Content="" Source="pages/startpage.xaml" Navigated="Frame_Navigated" NavigationUIVisibility="Visible"/>
+        <Menu HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="{Binding ElementName=myframe,Path=ActualWidth}" Margin="53,0,0,0">
+            <MenuItem Header="Μενού" Height="22">
+                <MenuItem x:Name="restartbtn" Header="Επανεκκίνηση" Click="restartbtn_Click"/>
+                <MenuItem x:Name="closebtn" Header="Τερματισμός" Click="closebtn_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="helpbtn" Header="Βοήθεια" Click="helpbtn_Click"/>
+        </Menu>
+
+    </Grid>
+</Window>

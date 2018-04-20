@@ -1,0 +1,96 @@
+﻿<Page x:Class="WpfApplication1.pages.exercise2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="exercise2">
+
+    <Viewbox Stretch="Fill">
+        <Grid x:Name="ex2grid" Width="1366" Height="768">
+            <Grid.Background>
+                <ImageBrush Stretch="Fill" ImageSource="/images/exercise1.jpg" AlignmentY="Top" AlignmentX="Center"/>
+            </Grid.Background>
+
+            <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+            <Grid.Resources>
+                <Style x:Key="MyButtonStyle" TargetType="Button">
+                    <Setter Property="OverridesDefaultStyle" Value="True"/>
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Name="border" 
+                            BorderThickness="0.1"
+                            Padding="4,2" 
+                            BorderBrush="DarkGray" 
+                            CornerRadius="3" 
+                            Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+            <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+
+            <!-- AirCondition -->
+            <Image x:Name="aircondition" HorizontalAlignment="Left" Height="96" Margin="520,103,0,0" VerticalAlignment="Top" Width="143" Source="/images/aircondition.png" RenderTransformOrigin="0.976,0.407"/>
+            <Button x:Name="acbtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="520,103,0,0" VerticalAlignment="Top" Width="143" Height="96" ToolTip="Κλιματιστικό" Click="acbtn_Click" Cursor="Hand" Panel.ZIndex="1">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Label x:Name="acstatus" Content="ON" HorizontalAlignment="Left" Margin="556,132,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Foreground="Red" Width="37" Background="#FF4197FF" Height="26"/>
+            <!-- Lights -->
+            <Slider x:Name="lights" HorizontalAlignment="Left" Margin="302,273,0,0" VerticalAlignment="Top" Width="56" RenderTransformOrigin="0.522,0.56" Height="21" Maximum="1" IsSnapToTickEnabled="True" ValueChanged="slider_ValueChanged" ToolTip="Διακόπτης Φωτισμού" Background="#FF719C97" Cursor="Hand">
+                <Slider.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="91.168"/>
+                        <TranslateTransform X="-0.492" Y="-2.669"/>
+                    </TransformGroup>
+                </Slider.RenderTransform>
+            </Slider>            
+            <!-- Customer1 -->
+            <Image HorizontalAlignment="Left" Height="265" Margin="823,267,0,0" VerticalAlignment="Top" Width="132" Source="/images/customer1.png"/>
+            <GroupBox x:Name="groupboxc1" Header="GroupBox" HorizontalAlignment="Left" Margin="879,70,-108,0" VerticalAlignment="Top" Width="595" Height="278" Visibility="Hidden" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+                <Grid>
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="246" Source="/images/dialogcloud.png" Stretch="Fill"/>
+                    <Label x:Name="lblc1" Content="Έρχεσαι λίγο;" HorizontalAlignment="Left" Margin="50,43,0,0" VerticalAlignment="Top" Width="368" Height="68" FontSize="22" HorizontalContentAlignment="Center"/>
+                    <Button x:Name="c1btn" Content="Βεβαίως!" HorizontalAlignment="Left" Margin="194,118,0,0" VerticalAlignment="Top" Width="75" Click="c1btn_Click"/>
+                </Grid>
+            </GroupBox>
+            <!-- Customer2 -->
+            <Image HorizontalAlignment="Left" Height="180" Margin="437,359,0,0" VerticalAlignment="Top" Width="226" Source="/images/customer2.png"/>
+            <GroupBox x:Name="groupboxc2" Header="GroupBox" HorizontalAlignment="Left" Margin="560,199,0,0" VerticalAlignment="Top" Width="595" Height="278" Visibility="Hidden" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+                <Grid>
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="573" Height="246" Source="/images/dialogcloud.png" Stretch="Fill"/>
+                    <Label x:Name="lblc2" Content="Να ζητήσω μια χάρη;" HorizontalAlignment="Left" Margin="50,43,0,0" VerticalAlignment="Top" Width="436" Height="68" FontSize="22" HorizontalContentAlignment="Center"/>
+                    <Button x:Name="c2btn" Content="Βεβαίως!" HorizontalAlignment="Left" Margin="230,118,0,0" VerticalAlignment="Top" Width="75" Click="c2btn_Click"/>
+                </Grid>
+            </GroupBox>
+            <!-- Customer3 -->
+            <Image HorizontalAlignment="Left" Height="376" Margin="100,392,0,0" VerticalAlignment="Top" Width="239" Source="/images/customer3.png"/>
+            <GroupBox x:Name="groupboxc3" Header="GroupBox" HorizontalAlignment="Left" Margin="296,210,0,0" VerticalAlignment="Top" Width="595" Height="278" Visibility="Hidden" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+                <Grid>
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="573" Height="246" Source="/images/dialogcloud.png" Stretch="Fill"/>
+                    <Label x:Name="lblc3" Content="Μπορώ να σε απασχολήσω για λίγο;" HorizontalAlignment="Left" Margin="50,43,0,0" VerticalAlignment="Top" Width="436" Height="68" FontSize="22" HorizontalContentAlignment="Center"/>
+                    <Button x:Name="c3btn" Content="Βεβαίως!" HorizontalAlignment="Left" Margin="230,118,0,0" VerticalAlignment="Top" Width="75" Click="c3btn_Click"/>
+                </Grid>
+            </GroupBox>            
+            <!-- Navigation -->
+            <Button x:Name="toPool2btn" Content="Προς Πισίνα" HorizontalAlignment="Left" Margin="35,653,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Hand" Click="toPool2btn_Click"/>
+            <Button x:Name="toBar2btn" Content="Προς Μπαρ" HorizontalAlignment="Left" Margin="35,678,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Hand" Click="toBar2btn_Click"/>
+            <Button x:Name="toLockers2btn" Content="Προς Αποδυτήρια" HorizontalAlignment="Left" Margin="35,703,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Hand" Click="toLockers2btn_Click"/>
+        </Grid>
+    </Viewbox>
+</Page>

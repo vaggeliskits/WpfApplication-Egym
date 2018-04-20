@@ -1,0 +1,87 @@
+﻿<Page x:Class="WpfApplication1.pages.pool"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+	Title="pool">
+
+    <Viewbox Stretch="Fill">
+        <Grid x:Name="poolgrid" Width="1366" Height="768">
+            <Grid.Background>
+                <ImageBrush Stretch="Fill" ImageSource="/images/pool1.jpg" AlignmentY="Top" AlignmentX="Center"/>
+            </Grid.Background>
+
+            <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+            <Grid.Resources>
+                <Style x:Key="MyButtonStyle" TargetType="Button">
+                    <Setter Property="OverridesDefaultStyle" Value="True"/>
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Name="border" 
+                            BorderThickness="0.1"
+                            Padding="4,2" 
+                            BorderBrush="DarkGray" 
+                            CornerRadius="3" 
+                            Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+            <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+
+            <!-- Trainer -->
+            <Button x:Name="pooltrainerbtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="619,439,0,0" VerticalAlignment="Top" Width="147" Height="329" ToolTip="Γυμναστής" Cursor="Hand" Click="pooltrainerbtn_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/images/brad.png"/>
+                </Button.Background>
+            </Button>
+            <GroupBox x:Name="groupbox3" Header="GroupBox" HorizontalAlignment="Left" Margin="722,300,0,0" VerticalAlignment="Top" Width="595" Height="278" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Visibility="Hidden">
+                <Grid>
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="573" Height="246" Source="/images/dialogcloud.png" Stretch="Fill"/>
+                    <Label Content="Πώς μπορώ να βοηθήσω;" HorizontalAlignment="Left" Margin="122,10,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="22"/>
+                    <RadioButton x:Name="poolrdbtn1" Content="Μπορούμε να χαμηλώσουμε τον φωτισμό;" HorizontalAlignment="Left" Margin="122,49,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="poolrdbtn2" Content="Μπορούμε να δυναμώσουμε τον φωτισμό;" HorizontalAlignment="Left" Margin="122,64,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="poolrdbtn3" Content="Μπορούμε να ανεβάσουμε την θερμοκρασία της πισίνας;" HorizontalAlignment="Left" Margin="122,79,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="poolrdbtn4" Content="Μπορούμε να κατεβάσουμε την θερμοκρασία της πισίνας;" HorizontalAlignment="Left" Margin="122,94,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="poolrdbtn5" Content="Μπορείτε να μου πείτε το σημερινό μου πρόγραμμα;" HorizontalAlignment="Left" Margin="122,109,0,0" VerticalAlignment="Top"/>
+                    <Button Content="ΟΚ" HorizontalAlignment="Left" Margin="171,134,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                    <Button Content="Άκυρο" HorizontalAlignment="Left" Margin="286,134,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+                </Grid>
+            </GroupBox>
+            <!-- Thermometer -->
+            <Image HorizontalAlignment="Left" Height="120" Margin="1069,132,0,0" VerticalAlignment="Top" Width="130" Source="/images/thermometer.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-3.166"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Label x:Name="lbltemp" Content="25 °C" HorizontalAlignment="Left" Margin="1081,145,0,0" VerticalAlignment="Top" Background="#FF336BFF" Height="65" Width="87" Foreground="Red" FontSize="32" FontWeight="Bold"/>
+            <!-- Pool -->
+            <Button x:Name="swimbtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="0,424,0,0" VerticalAlignment="Top" Width="587" Height="344" ToolTip="Πισίνα" Cursor="Hand" Click="swimbtn_Click">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <!-- Navigation -->
+            <Button x:Name="pooltoExercisebtn" Content="Προς Χώρο Εκγύμνασης" HorizontalAlignment="Left" Margin="1165,653,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Hand" Click="pooltoExercisebtn_Click"/>
+            <Button x:Name="pooltoBarbtn" Content="Προς Μπαρ" HorizontalAlignment="Left" Margin="1165,678,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Hand" Click="pooltoBarbtn_Click"/>
+            <Button x:Name="pooltoLockersbtn" Content="Προς Αποδυτήρια" HorizontalAlignment="Left" Margin="1165,703,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Hand" Click="pooltoLockersbtn_Click"/>
+        </Grid>
+    </Viewbox>
+</Page>

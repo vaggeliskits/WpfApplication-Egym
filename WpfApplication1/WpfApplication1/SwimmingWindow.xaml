@@ -1,0 +1,14 @@
+﻿<Window x:Class="WpfApplication1.SwimmingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Μέτρα" Height="200" Width="300"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+
+    <Grid Background="#FFE6E6E6">
+        <Label HorizontalAlignment="Center" VerticalAlignment="Top" Content="Πόσα μέτρα;"/>
+        <TextBox x:Name="swimtxtbox" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="81,30,81,0" Width="30"/>
+        <Button Content="OK" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" Width="75" Background="#FFC3BDBD" Click="Button_Click"/>
+        <ProgressBar Name="swimpb"  Margin="45,115,45,22" />
+        <Label x:Name="swimlbl" Content="{Binding ElementName=swimpb, Path=Value, StringFormat={}{0:0}}" HorizontalAlignment="Center" Margin="45,115,45,0" VerticalAlignment="Top" Width="204" Height="34" HorizontalContentAlignment="Center"/>
+    </Grid>
+</Window>

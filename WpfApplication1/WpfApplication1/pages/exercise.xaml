@@ -1,0 +1,123 @@
+﻿<Page x:Class="WpfApplication1.pages.exercise"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+	Title="exercise">
+
+    <Viewbox Stretch="Fill">
+        <Grid x:Name="maingrid" Width="1366" Height="768">
+            <Grid.Background>
+                <ImageBrush Stretch="Fill" ImageSource="/images/exercise1.jpg" AlignmentY="Top" AlignmentX="Center"/>
+            </Grid.Background>
+
+            <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+            <Grid.Resources>
+                <Style x:Key="MyButtonStyle" TargetType="Button">
+                    <Setter Property="OverridesDefaultStyle" Value="True"/>
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Name="border" 
+                            BorderThickness="0.1"
+                            Padding="4,2" 
+                            BorderBrush="DarkGray" 
+                            CornerRadius="3" 
+                            Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+            <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+
+            <!-- Instruments -->
+            <Button x:Name="diadromosbtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="413,283,0,0" VerticalAlignment="Top" Width="73" Height="87" ToolTip="Διάδρομος" Click="diadromosbtn_Click" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="podilatobtn1" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Height="142" Margin="497,283,0,0" VerticalAlignment="Top" Width="75" ToolTip="Ποδήλατο" Click="podilatobtn1_Click" BorderThickness="0" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="podilatobtn2" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="583,283,0,0" VerticalAlignment="Top" Width="80" Height="151" ToolTip="Ποδήλατο" Click="podilatobtn2_Click" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="elleiptikobtn1" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="668,283,0,0" VerticalAlignment="Top" Width="105" Height="170" ToolTip="Ελλειπτικό" Click="elleiptikobtn1_Click" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="elleiptikobtn2" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="778,287,0,0" VerticalAlignment="Top" Width="136" Height="190" ToolTip="Ελλειπτικό" Click="elleiptikobtn2_Click" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="shoulderpressbtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="213,321,0,0" VerticalAlignment="Top" Width="174" Height="160" ToolTip="Πιέσεις Ώμων" Click="shoulderpressbtn_Click" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="legbtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="10,287,0,0" VerticalAlignment="Top" Width="169" Height="259" ToolTip="Εκτάσεις Ποδιών" Click="legbtn_Click" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="weigthsbtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="288,546,0,0" VerticalAlignment="Top" Width="174" Height="97" ToolTip="Ελεύθερα Βάρη" Click="weigthsbtn_Click" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="ballsbtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="691,510,0,0" VerticalAlignment="Top" Width="134" Height="119" ToolTip="Μπάλες Εκγύμνασης" Click="ballsbtn_Click" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="pulleybtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="892,82,0,0" VerticalAlignment="Top" Width="294" Height="155" ToolTip="Τροχαλία Εκγύμνασης" Click="pulleybtn_Click" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <!-- Trainer -->
+            <Button x:Name="trainerbtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="493,439,0,0" VerticalAlignment="Top" Width="147" Height="329" ToolTip="Γυμναστής" Click="trainerbtn_Click" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush ImageSource="/images/brad.png"/>
+                </Button.Background>
+            </Button>
+            <GroupBox x:Name="groupbox1" Header="GroupBox" HorizontalAlignment="Left" Margin="604,273,0,0" VerticalAlignment="Top" Width="595" Height="278" Visibility="Hidden" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+                <Grid>
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="573" Height="246" Source="/images/dialogcloud.png" Stretch="Fill"/>
+                    <Label Content="Πώς μπορώ να βοηθήσω;" HorizontalAlignment="Left" Margin="122,10,0,0" VerticalAlignment="Top" Width="273" Height="42" FontSize="22"/>
+                    <RadioButton x:Name="rdbtn1" Content="Μπορούμε να χαμηλώσουμε τον φωτισμό;" HorizontalAlignment="Left" Margin="122,49,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="rdbtn2" Content="Μπορούμε να δυναμώσουμε τον φωτισμό;" HorizontalAlignment="Left" Margin="122,64,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="rdbtn3" Content="Μπορούμε να ενεργοποιήσουμε το κλιματιστικό;" HorizontalAlignment="Left" Margin="122,79,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="rdbtn4" Content="Μπορούμε να απενεργοποιήσουμε το κλιματιστικό;" HorizontalAlignment="Left" Margin="122,94,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="rdbtn5" Content="Μπορείτε να μου πείτε το σημερινό μου πρόγραμμα;" HorizontalAlignment="Left" Margin="122,109,0,0" VerticalAlignment="Top"/>
+                    <Button Content="ΟΚ" HorizontalAlignment="Left" Margin="171,134,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                    <Button Content="Άκυρο" HorizontalAlignment="Left" Margin="286,134,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+                </Grid>
+            </GroupBox>
+            <!-- AirCondition -->
+            <Image x:Name="aircondition" HorizontalAlignment="Left" Height="96" Margin="520,103,0,0" VerticalAlignment="Top" Width="143" Source="/images/aircondition.png" RenderTransformOrigin="0.976,0.407"/>
+            <Label x:Name="acstatus" Content="ON" HorizontalAlignment="Left" Margin="556,132,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Foreground="Red" Width="37" Background="#FF4197FF" Height="26"/>
+            <!-- Navigation -->
+            <Button x:Name="toPoolbtn" Content="Προς Πισίνα" HorizontalAlignment="Left" Margin="35,653,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Hand" Click="toPoolbtn_Click"/>
+            <Button x:Name="toBarbtn" Content="Προς Μπαρ" HorizontalAlignment="Left" Margin="35,678,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Hand" Click="toBarbtn_Click"/>
+            <Button x:Name="toLockersbtn" Content="Προς Αποδυτήρια" HorizontalAlignment="Left" Margin="35,703,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Hand" Click="toLockersbtn_Click"/>
+        </Grid>
+    </Viewbox>
+</Page>

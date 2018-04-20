@@ -1,0 +1,93 @@
+﻿<Page x:Class="WpfApplication1.help.bar_help"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="bar_help">
+
+    <Viewbox Stretch="Fill">
+        <Grid x:Name="bar_hgrid" Width="1366" Height="768">
+            <Grid.Background>
+                <ImageBrush ImageSource="/images/bar.jpg"/>
+            </Grid.Background>
+
+            <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+            <Grid.Resources>
+                <Style x:Key="MyButtonStyle" TargetType="Button">
+                    <Setter Property="OverridesDefaultStyle" Value="True"/>
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Name="border" 
+                            BorderThickness="1"
+                            Padding="4,2" 
+                            BorderBrush="Red" 
+                            CornerRadius="3" 
+                            Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+            <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+
+            <!-- Help Mode-->
+            <Label Content="Λειτουργία Βοήθειας" HorizontalAlignment="Left" Margin="16,34,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="Red" FontStyle="Italic"/>
+            <Button x:Name="exithelpbtn" Content="Έξοδος από Λειτουργία Βοήθειας" HorizontalAlignment="Left" Margin="16,71,0,0" VerticalAlignment="Top" Width="211" Height="26" Cursor="Hand" Click="exithelpbtn_Click" FontStyle="Italic" Foreground="White">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            
+            <!-- TV -->
+            <Image HorizontalAlignment="Left" Height="91" Margin="73,291,0,0" VerticalAlignment="Top" Width="134" Source="/images/bartv.png" RenderTransformOrigin="0.833,-0.159">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.026"/>
+                        <RotateTransform Angle="2.037"/>
+                        <TranslateTransform X="1.814" Y="1.403"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            
+            <!-- Cashier -->
+            <Button x:Name="cashier_hbtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="384,310,0,0" VerticalAlignment="Top" Width="349" ToolTip="Ταμείο" Height="135" RenderTransformOrigin="-1.293,0.362" Cursor="Help" Click="cashier_hbtn_Click">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <!-- WC -->
+            <Button x:Name="wc_hbtn" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Margin="880,317,0,0" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.268,-0.162" Height="99" ToolTip="W.C." Cursor="Help" Click="wcbtn_Click">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Image HorizontalAlignment="Left" Height="25" Margin="900,308,0,0" VerticalAlignment="Top" Width="25" Source="/images/wcsign.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="17.127"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="3.853"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <!-- Navigation -->
+            <Button x:Name="toExercise_hbtn" Content="Προς Χώρο Εκγύμνασης" HorizontalAlignment="Left" Margin="35,653,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Help" BorderBrush="Red" Click="toExercise_hbtn_Click"/>
+            <Button x:Name="toPool_hbtn" Content="Προς Πισίνα" HorizontalAlignment="Left" Margin="35,678,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Help" BorderBrush="Red" Click="toPool_hbtn_Click"/>
+            <Button x:Name="toLockers_hbtn" Content="Προς Αποδυτήρια" HorizontalAlignment="Left" Margin="35,703,0,0" VerticalAlignment="Top" Width="144" Background="#FF00DCDC" Cursor="Help" BorderBrush="Red" Click="toLockers_hbtn_Click"/>
+
+        </Grid>
+    </Viewbox>
+</Page>
